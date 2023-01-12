@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Biblioteca</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/pageStyles.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+        </header>
+        <main class="main-index">
+            <section class="hero-image">
+                <div>
+                    <h1>Bienvenido</h1>
+                </div>
+            </section>
+            <section class="card-section" >
+                <article class="card-index" style="--i:url(libros.jpg);">
+                    <div class="content">
+                        <h2>Libros</h2>
+                        <a th:href="@{/libros}">Ir a lista</a>
+                    </div>
+                </article>
+                <article class="card-index" style="--i:url(autores.jpg);">
+                    <div class="content">
+                        <h2>Autores</h2>
+                        <a th:href="@{/autores}">Ir a lista</a>
+                    </div>
+                </article>
+                <article class="card-index" style="--i:url(editoriales.jpg);">
+                    <div class="content">
+                        <h2>Editoriales</h2>
+                        <a th:href="@{/editoriales}">Ir a lista</a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <section class="section-tec">
+                
+                <article class="content-tec">
+                    <h3>Tecnologías utilizadas</h3>
+                    <div class="tecs">
+                        <div class="tec">
+                            <i class='bx bxl-html5 bx-sm' style='color:#f57b03'  ></i>
+                            <p>HTML</p>
+                        </div>
+                        <div class="tec">
+                            <i class='bx bxl-css3 bx-sm' style='color:#0f9def'  ></i>
+                            <p>CSS</p>
+                        </div>
+                        <div class="tec">
+                            <i class='bx bxl-bootstrap bx-sm' style='color:#9320ec'  ></i>
+                            <p>Bootstrap</p>
+                        </div>
+                        <div class="tec">
+                            <i class='bx bxl-java bx-sm' style='color:#dad0bf'  ></i>
+                            <p>Java</p>
+                        </div>
+                        <div class="tec">
+                            <i class='bx bxl-spring-boot bx-sm' style='color:#30d404'  ></i>
+                            <p>SpringBoot</p>
+                        </div>
+                </div>
+                    </article>
+                    <article class="content-developer">
+                        <h3>Desarrollador</h3>
+                        <p><span class="tittle">Nombre: </span>Esteban Emmanuel Cáceres</p>
+                        <p><span class="tittle">Email: </span>estebanemmanuelcaceres@gmail.com</p>
+                        <p><span class="tittle">Telefono: </span>(54)2615120063</p>
+                    </article>
+                </section>
+            
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+    <head>
+        <title>Plantilla</title>
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <header th:fragment="header" class="d-flex justify-content-between align-items-center bg-dark-subtle"> 
+            <h1 th:text="#{plantilla.titulo}"></h1>
+            <nav class="navbar navbar-expand-lg m-0 ">
+                
+                <div class="container  d-flex m-0  justify-content-evenly">
+                        
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse m-0 w-50 p-3" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active pe-auto" aria-current="page" th:href="@{/}">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active pe-auto" aria-current="page" th:href="@{/libros}">Libros</a>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a class="nav-link active pe-auto" aria-current="page" th:href="@{/usuarios}">Usuarios</a>
+                            </li>-->
+                            <li class="nav-item">
+                                <a class="nav-link active pe-auto" aria-current="page" th:href="@{/autores}">Autores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active pe-auto" aria-current="page" th:href="@{/editoriales}">Editoriales</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <footer th:fragment="footer">
+            <section class="section-tec">
+                
+                <article class="content-tec">
+                    <h3>Tecnologías utilizadas</h3>
+                    <div class="tecs">
+                        <div class="tec">
+                            <i class='bx bxl-html5 bx-sm' style='color:#f57b03'  ></i>
+                            <p>HTML</p>
+                        </div>
+                        <div class="tec">
+                            <i class='bx bxl-css3 bx-sm' style='color:#0f9def'  ></i>
+                            <p>CSS</p>
+                        </div>
+                        <div class="tec">
+                            <i class='bx bxl-bootstrap bx-sm' style='color:#9320ec'  ></i>
+                            <p>Bootstrap</p>
+                        </div>
+                        <div class="tec">
+                            <i class='bx bxl-java bx-sm' style='color:#dad0bf'  ></i>
+                            <p>Java</p>
+                        </div>
+                        <div class="tec">
+                            <i class='bx bxl-spring-boot bx-sm' style='color:#30d404'  ></i>
+                            <p>SpringBoot</p>
+                        </div>
+                </div>
+                    </article>
+                    <article class="content-developer">
+                        <h3>Desarrollador</h3>
+                        <p><span class="tittle">Nombre: </span>Esteban Emmanuel Cáceres</p>
+                        <p><span class="tittle">Email: </span>estebanemmanuelcaceres@gmail.com</p>
+                        <p><span class="tittle">Telefono: </span>(54)2615120063</p>
+                    </article>
+                </section>
+        </footer>
+    </body>
+</html>

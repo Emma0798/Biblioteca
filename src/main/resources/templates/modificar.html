@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Datos del usuario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <h2>Datos del usuario</h2>
+        <a th:href="@{/usuarios}">Regresar</a>
+        <br/>
+        <form th:action="@{/guardar}" method="post" th:object="${usuario}">
+            <input type="hidden" name="idusuarios" th:field="*{idusuarios}"/>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" th:field="*{nombre}"/>
+            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error del nombre</span>
+            <br/>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" th:field="*{apellido}"/>
+            <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Error del apellido</span>
+            <br/>
+            <label for="email">Email:</label>
+            <input type="email" name="email" th:field="*{email}"/>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error del email</span>
+            <br/>
+            <label for="contraseña">Contraseña:</label>
+            <input type="text" name="contraseña" th:field="*{password}"/>
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Error de la contraseña</span>
+            <br/>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+        
+    </body>
+</html>

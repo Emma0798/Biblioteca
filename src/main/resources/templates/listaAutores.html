@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Incio de la biblioteca</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/pageStyles.css">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header th:replace="layout/plantilla :: header"></header>
+        <main class="d-flex flex-column flex-grow-1 justify-content-center">
+            <div class="d-flex flex-column align-self-center w-75">
+                <table class="table table-secondary table-striped">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr th:each="autor : ${autores}" class="text-center">
+                        <td th:text="${autor.idAutor}"></td>
+                        <td th:text="${autor.nombre}"></td>
+                        <td th:text="${autor.apellido}"></td>
+                        <td>
+                            <a th:href="@{/editarAutor/} + ${autor.idAutor}"><i class='bx bx-sm bxs-edit-alt' style='color:#0c0c0c'  ></i></a>
+                            <a th:href="@{/eliminarAutor(idAutor=${autor.idAutor})}"><i class='bx bx-sm bxs-trash' style='color:#e03a3a'></i></a>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <a class="align-self-end" th:href="@{/agregarAutor}"><button type="button" class="btn btn-primary">Cargar autor</button></a>
+            </div>
+            
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+</html>
